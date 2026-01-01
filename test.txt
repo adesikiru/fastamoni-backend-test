@@ -12,6 +12,9 @@ mongo "mongodb+srv://fastamoni.e6xu1hu.mongodb.net/myFirstDatabase" --username s
 curl -X POST http://localhost:3001/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"email": "test@example.com", "password": "password123", "fullName": "Test User"}'
+curl -X POST http://localhost:3001/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"email": "fest@example.com", "password": "password1234", "fullName": "Fest User"}'
 
 curl -X POST http://localhost:3001/api/auth/login \
   -H "Content-Type: application/json" \
