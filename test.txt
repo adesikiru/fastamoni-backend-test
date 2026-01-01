@@ -1,0 +1,9 @@
+mongoDB ATLAS cluster details
+cluster address: cluster0.sikirusulaimon2002.mongodb.net
+database name: sikirusulaimon2002_db
+username: sikirusulaimon2002_db_user
+password: Hp9Vv6f5XlLIyP1O
+connection string: mongodb+srv://sikirusulaimon2002_db_user:Hp9Vv6f5XlLIyP1O@fastamoni.e6xu1hu.mongodb.net/?appName=fastamoni
+
+command to connect using mongo shell locally: sudo mongod --dbpath=/Users/user/data/db
+mongo "mongodb+srv://fastamoni.e6xu1hu.mongodb.net/myFirstDatabase" --username sikirusulaimon2002_db_user
