@@ -12,10 +12,15 @@ mongo "mongodb+srv://fastamoni.e6xu1hu.mongodb.net/myFirstDatabase" --username s
 curl -X POST http://localhost:3001/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"email": "test@example.com", "password": "password123", "fullName": "Test User"}'
+
 curl -X POST http://localhost:3001/api/auth/register \
   -H "Content-Type: application/json" \
-  -d '{"email": "fest@example.com", "password": "password1234", "fullName": "Fest User"}'
+  -d '{"email": "festival@example.com", "password": "password1234", "fullName": "Festival User"}'
 
 curl -X POST http://localhost:3001/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email": "test@example.com", "password": "password123"}'
+
+
+  curl -X GET http://localhost:3001/api/wallet/me \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTZmYWE4YmM1MjM5MDUyZjcxYmJjYyIsImlhdCI6MTc2NzMwNzk0NCwiZXhwIjoxNzY3OTEyNzQ0fQ.I3qxuYa8VcIb19LoR0_rVX0pK7x66l6HR6c1Hc3LoxE"
