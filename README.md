@@ -86,6 +86,7 @@ Deployment
 The service is deployed on Render.
 
 Base URL:
+https://fastamoni-backend-test.onrender.com
 
 
 Setup Instructions:
