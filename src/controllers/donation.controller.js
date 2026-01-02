@@ -44,7 +44,7 @@ exports.createDonation = async (req, res) => {
         { user: req.user.id, type: "DEBIT", amount, reference: donation[0]._id },
         { user: beneficiaryId, type: "CREDIT", amount, reference: donation[0]._id },
       ],
-      { session }
+      { session, ordered: true }
     );
 
     await session.commitTransaction();
