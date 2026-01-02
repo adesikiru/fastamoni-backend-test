@@ -27,7 +27,7 @@ exports.register = async (req, res) => {
         });
 
         //create userWallet immediately after sign up
-        await Wallet.create({ user: user._id });
+        await Wallet.create({ user: user._id, balance: 1000 });
 
         const token = signToken(user._id);
 

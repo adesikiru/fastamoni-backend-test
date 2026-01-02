@@ -8,19 +8,41 @@ mongodb localhost connection string: mongodb://localhost:27017/fastamoni
 command to connect using mongo shell locally: sudo mongod --dbpath=/Users/user/data/db
 mongo "mongodb+srv://fastamoni.e6xu1hu.mongodb.net/myFirstDatabase" --username sikirusulaimon2002_db_user
 
-
+//test register
 curl -X POST http://localhost:3001/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"email": "test@example.com", "password": "password123", "fullName": "Test User"}'
-
 curl -X POST http://localhost:3001/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"email": "festival@example.com", "password": "password1234", "fullName": "Festival User"}'
 
+//test login
 curl -X POST http://localhost:3001/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email": "test@example.com", "password": "password123"}'
+curl -X POST http://localhost:3001/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email": "festival@example.com", "password": "password1234"}'
 
-
+//test get current user wallet info for user festival
   curl -X GET http://localhost:3001/api/wallet/me \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTZmYWE4YmM1MjM5MDUyZjcxYmJjYyIsImlhdCI6MTc2NzMwNzk0NCwiZXhwIjoxNzY3OTEyNzQ0fQ.I3qxuYa8VcIb19LoR0_rVX0pK7x66l6HR6c1Hc3LoxE"
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTZmYWE4YmM1MjM5MDUyZjcxYmJjYyIsImlhdCI6MTc2NzMzNTUzMCwiZXhwIjoxNzY3OTQwMzMwfQ.WqE0L4WJgS6Xt670A6YcMEmxxBHPwdsbsZ8LJ9Vo9wI"
+
+// test create wallet transaction pin for user festival
+curl -X POST http://localhost:3001/api/pin/set \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTZmYWE4YmM1MjM5MDUyZjcxYmJjYyIsImlhdCI6MTc2NzMzNTUzMCwiZXhwIjoxNzY3OTQwMzMwfQ.WqE0L4WJgS6Xt670A6YcMEmxxBHPwdsbsZ8LJ9Vo9wI" \
+  -H "Content-Type: application/json" \
+  -d '{"pin": "1234"}'
+
+  //test donation
+curl -X POST http://localhost:3001/api/donations \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTZmYWE4YmM1MjM5MDUyZjcxYmJjYyIsImlhdCI6MTc2NzMzNTUzMCwiZXhwIjoxNzY3OTQwMzMwfQ.WqE0L4WJgS6Xt670A6YcMEmxxBHPwdsbsZ8LJ9Vo9wI" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "beneficiaryId": "6956faa8bc5239052f71bbcc",
+    "amount": 100,
+    "pin": "1234",
+    "idempotencyKey": "unique-key-123"
+  }'
+
+

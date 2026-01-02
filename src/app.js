@@ -38,6 +38,7 @@ const cors = require("cors");
 const authRoutes = require("./routes/auth.routes");
 const walletRoutes = require("./routes/wallet.routes");
 const pinRoutes = require("./routes/pin.routes");
+const donationRoutes = require("./routes/donation.routes");
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.use(express.json());
 
 app.use("/api/wallet", walletRoutes);
 app.use("/api/pin", pinRoutes);
+app.use("/api/donations", donationRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "Fastamoni API running" });
