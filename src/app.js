@@ -40,6 +40,7 @@ const walletRoutes = require("./routes/wallet.routes");
 const pinRoutes = require("./routes/pin.routes");
 const donationRoutes = require("./routes/donation.routes");
 const fundRoutes = require("./routes/fund.routes");
+const donationQueryRoutes = require("./routes/donation.query.routes");
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use("/api/wallet", walletRoutes);
 app.use("/api/pin", pinRoutes);
 app.use("/api/donations", donationRoutes);
 app.use("/api/funds", fundRoutes);
+app.use("/api/donations", donationQueryRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "Fastamoni API running" });
